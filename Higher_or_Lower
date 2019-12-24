@@ -23,8 +23,12 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "Lower", Toast.LENGTH_SHORT).show();
         }
         else if (guessint == randomNumber){
-            Toast.makeText(MainActivity.this, "Bingo!", Toast.LENGTH_SHORT).show();
-        }
+            Toast.makeText(MainActivity.this, "Bingo! Try again.", Toast.LENGTH_SHORT).show();
+        	Random rand = new Random();
+
+            randomNumber = rand.nextInt(20) + 1;
+		
+	}
         else{
             Toast.makeText(MainActivity.this, "Higher", Toast.LENGTH_SHORT).show();
             }
