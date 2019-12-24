@@ -10,8 +10,12 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+	
+	int randomnumber;
+        public void makeToast(String string){
 
-    int randomNumber;
+        Toast.makeText(MainActivity.this, string, Toast.LENGTH_SHORT).show();
+    }
 
     public void guess(View view){
 
@@ -20,17 +24,16 @@ public class MainActivity extends AppCompatActivity {
         int guessint = Integer.parseInt(guessEditText.getText().toString());
 
         if (guessint > randomNumber) {
-            Toast.makeText(MainActivity.this, "Lower", Toast.LENGTH_SHORT).show();
+            makeToast("Lower!");
         }
         else if (guessint == randomNumber){
-            Toast.makeText(MainActivity.this, "Bingo! Try again.", Toast.LENGTH_SHORT).show();
-        	Random rand = new Random();
+            makeToast("Bingo! Try again.");
+            Random rand = new Random();
 
             randomNumber = rand.nextInt(20) + 1;
-		
-	}
+        }
         else{
-            Toast.makeText(MainActivity.this, "Higher", Toast.LENGTH_SHORT).show();
+            makeToast("Higher!");
             }
 
     }
